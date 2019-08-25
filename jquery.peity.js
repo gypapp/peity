@@ -1,6 +1,7 @@
-// Peity jQuery plugin version 3.3.0
-// (c) 2018 Ben Pickles
+// Peity jQuery plugin version 3.3.0 + hotfix for #68
+// (c) 2018 Ben Pickles / Gyozo Papp
 //
+// The original version can be found:
 // http://benpickles.github.io/peity
 //
 // Released under MIT license.
