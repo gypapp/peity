@@ -136,15 +136,12 @@
       }
 
       var diameter = opts.radius * 2
+        , width = opts.width || diameter
+        , height = opts.height || diameter
 
-      var $svg = this.prepare(
-        opts.width || diameter,
-        opts.height || diameter
-      )
+      var $svg = this.prepare(width, height)
 
-      var width = $svg.width()
-        , height = $svg.height()
-        , cx = width / 2
+      var cx = width / 2
         , cy = height / 2
 
       var radius = Math.min(cx, cy)
@@ -260,8 +257,8 @@
 
       var $svg = this.prepare(opts.width, opts.height)
         , strokeWidth = opts.strokeWidth
-        , width = $svg.width()
-        , height = $svg.height() - strokeWidth
+        , width = $svg.width() || opts.width
+        , height = ($svg.height() || opts.height) - strokeWidth
         , diff = max - min
 
       var xScale = this.x = function(input) {
@@ -329,8 +326,8 @@
         , min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min))
 
       var $svg = this.prepare(opts.width, opts.height)
-        , width = $svg.width()
-        , height = $svg.height()
+        , width = $svg.width() || opts.width
+        , height = $svg.height() || opts.height
         , diff = max - min
         , padding = opts.padding
         , fill = this.fill()
